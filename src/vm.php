@@ -79,12 +79,8 @@ class Machine
                         ;
                     $this->logger->info('endwhile', ['p' => $this->p]);
                     break;
-                case ' ':
-                case "\n":
-                    // noop
-                    break;
                 default:
-                    throw new \RuntimeException(sprintf('Invalid instruction %s', $op));
+                    // noop
                     break;
             }
         }
