@@ -1,5 +1,7 @@
 # brainfuck-php
 
+![brainfuck](doc/brainfuck.png)
+
 brainfuck is a turing complete language with 8 instructions.
 
 ## Example
