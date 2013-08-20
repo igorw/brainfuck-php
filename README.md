@@ -19,11 +19,11 @@ Cat:
 
 Just pass a filename to the interpreter:
 
-    $ bin/brainfuck examples/hello.bf
+    $ bin/brainfuck examples/hello.b
 
 You can also pass the --debug option to get a log of all instructions.
 
-    $ bin/brainfuck --debug examples/hello.bf
+    $ bin/brainfuck --debug examples/hello.b
 
 ## References
 
