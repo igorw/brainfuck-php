@@ -50,7 +50,8 @@ class Machine
                     echo chr($this->tape[$this->p]);
                     break;
                 case ',':
-                    $this->tape[$this->p] = ord(fread(STDIN, 1));
+                    $char = fread(STDIN, 1);
+                    $this->tape[$this->p] = ($char === "\x04") ? 0 : ord($char);
                     break;
                 case '[':
                     if (!$this->tape[$this->p])
