@@ -1,0 +1,23 @@
+{
+    "name": "igorw/brainfuck",
+    "description": "brainfuck implementation.",
+    "keywords": ["brainfuck"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Wiedler",
+            "email": "igor@wiedler.ch"
+        }
+    ],
+    "require": {
+        "psr/log": "~1.0"
+    },
+    "require-dev": {
+        "docopt/docopt": "dev-master",
+        "phpunit/phpunit": "~3.7",
+        "monolog/monolog": "~1.6"
+    },
+    "autoload": {
+        "files": ["src/vm.php"]
+    }
+}
