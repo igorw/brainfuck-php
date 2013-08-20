@@ -10,7 +10,7 @@ use igorw\brainfuck;
 system('stty -icanon');
 
 $doc = <<<DOC
-Befunge.
+Brainfuck.
 
 Usage:
   brainfuck [--debug] [--] <filename>
