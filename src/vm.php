@@ -12,6 +12,8 @@ function execute($code)
 // in order to allow consuming single chars,
 // make sure to run with:
 //   system("stty -icanon");
+//
+// source: http://stackoverflow.com/a/3684565/289985
 class Machine
 {
     public $code;
@@ -48,7 +50,7 @@ class Machine
                     echo chr($this->tape[$this->p]);
                     break;
                 case ',':
-                    $this->tape[$this->p] = fread(STDIN, 1);
+                    $this->tape[$this->p] = ord(fread(STDIN, 1));
                     break;
                 case '[':
                     if (!$this->tape[$this->p])
