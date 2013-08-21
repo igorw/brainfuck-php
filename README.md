@@ -2,7 +2,7 @@
 
 ![brainfuck](doc/brainfuck.png)
 
-brainfuck is a turing complete language with 8 instructions.
+Brainfuck is a turing complete language with 8 instructions.
 
 ## Example
 
@@ -28,4 +28,4 @@ You can also pass the --debug option to get a log of all instructions.
 ## References
 
 * [Brian Raiter's guide](http://www.muppetlabs.com/~breadbox/bf/)
-* [brainfuck on Esolang](http://esolangs.org/wiki/Brainfuck)
+* [Brainfuck on Esolang](http://esolangs.org/wiki/Brainfuck)

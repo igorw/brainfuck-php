@@ -1,6 +1,6 @@
 {
     "name": "igorw/brainfuck",
-    "description": "brainfuck implementation.",
+    "description": "Brainfuck implementation.",
     "keywords": ["brainfuck"],
     "license": "MIT",
     "authors": [
