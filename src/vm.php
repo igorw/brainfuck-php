@@ -69,14 +69,32 @@ class Machine
                     $this->logger->info('output', ['p' => $this->p, 'char' => ($char === "\x04") ? 'EOF' : $char]);
                     break;
                 case '[':
-                    if (!$this->tape[$this->p])
-                        while ($this->code[$this->ip++] !== ']')
-                            ;
+                    if (!$this->tape[$this->p]) {
+                        $nesting = 0;
+                        while ($char = $this->code[$this->ip++]) {
+                            if ($char === ']' && $nesting === 0)
+                                break;
+
+                            if ($char === '[')
+                                $nesting++;
+                            else if ($char === ']')
+                                $nesting--;
+                        }
+                    }
                     $this->logger->info('while', ['p' => $this->p]);
                     break;
                 case ']':
-                    while ($this->code[--$this->ip] !== '[')
-                        ;
+                    $nesting = 0;
+                    $this->ip--;
+                    while ($char = $this->code[--$this->ip]) {
+                        if ($char === '[' && $nesting === 0)
+                            break;
+
+                        if ($char === ']')
+                            $nesting++;
+                        else if ($char === '[')
+                            $nesting--;
+                    }
                     $this->logger->info('endwhile', ['p' => $this->p]);
                     break;
                 default:
