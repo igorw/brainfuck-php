@@ -28,4 +28,5 @@ You can also pass the --debug option to get a log of all instructions.
 ## References
 
 * [Brian Raiter's guide](http://www.muppetlabs.com/~breadbox/bf/)
+* [Daniel B. Cristofani's examples](http://www.hevanet.com/cristofd/brainfuck/)
 * [Brainfuck on Esolang](http://esolangs.org/wiki/Brainfuck)
