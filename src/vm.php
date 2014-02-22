@@ -81,15 +81,13 @@ class Machine
                     $this->logger->info('while', ['p' => $this->p]);
                     break;
                 case ']':
-                    if ($this->tape[$this->p]) {
-                        $this->ip--;
-                        $nesting = 1;
-                        while ($nesting) {
-                            $char = $this->code[--$this->ip];
+                    $this->ip--;
+                    $nesting = 1;
+                    while ($nesting) {
+                        $char = $this->code[--$this->ip];
 
-                            if ($char === ']') $nesting++;
-                            if ($char === '[') $nesting--;
-                        }
+                        if ($char === ']') $nesting++;
+                        if ($char === '[') $nesting--;
                     }
                     $this->logger->info('endwhile', ['p' => $this->p]);
                     break;
