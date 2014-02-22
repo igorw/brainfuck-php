@@ -70,30 +70,26 @@ class Machine
                     break;
                 case '[':
                     if (!$this->tape[$this->p]) {
-                        $nesting = 0;
-                        while ($char = $this->code[$this->ip++]) {
-                            if ($char === ']' && $nesting === 0)
-                                break;
+                        $nesting = 1;
+                        while ($nesting) {
+                            $char = $this->code[$this->ip++];
 
-                            if ($char === '[')
-                                $nesting++;
-                            else if ($char === ']')
-                                $nesting--;
+                            if ($char === '[') $nesting++;
+                            if ($char === ']') $nesting--;
                         }
                     }
                     $this->logger->info('while', ['p' => $this->p]);
                     break;
                 case ']':
-                    $nesting = 0;
-                    $this->ip--;
-                    while ($char = $this->code[--$this->ip]) {
-                        if ($char === '[' && $nesting === 0)
-                            break;
+                    if ($this->tape[$this->p]) {
+                        $this->ip--;
+                        $nesting = 1;
+                        while ($nesting) {
+                            $char = $this->code[--$this->ip];
 
-                        if ($char === ']')
-                            $nesting++;
-                        else if ($char === '[')
-                            $nesting--;
+                            if ($char === ']') $nesting++;
+                            if ($char === '[') $nesting--;
+                        }
                     }
                     $this->logger->info('endwhile', ['p' => $this->p]);
                     break;
