@@ -21,9 +21,9 @@ Just pass a filename to the interpreter:
 
     $ bin/brainfuck examples/hello.b
 
-You can also pass the --debug option to get a log of all instructions.
+You can also run the debug command to get a log of all instructions.
 
-    $ bin/brainfuck --debug examples/hello.b
+    $ bin/brainfuck debug examples/hello.b
 
 ## References
 
