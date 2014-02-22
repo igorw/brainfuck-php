@@ -61,12 +61,12 @@ class Machine
                 case '.':
                     $char = chr($this->tape[$this->p]);
                     echo $char;
-                    $this->logger->info('input', ['p' => $this->p, 'char' => $char]);
+                    $this->logger->info('output', ['p' => $this->p, 'char' => $char]);
                     break;
                 case ',':
                     $char = fread(STDIN, 1);
                     $this->tape[$this->p] = ($char === "\x04") ? 0 : ord($char);
-                    $this->logger->info('output', ['p' => $this->p, 'char' => ($char === "\x04") ? 'EOF' : $char]);
+                    $this->logger->info('input', ['p' => $this->p, 'char' => ($char === "\x04") ? 'EOF' : $char]);
                     break;
                 case '[':
                     if (!$this->tape[$this->p]) {
