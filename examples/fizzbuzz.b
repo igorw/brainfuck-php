@@ -1,6 +1,14 @@
-this is almost fizzbuzz; it does not print asciified numbers; because that would take way too much work
-instead; it just outputs F for fizz numbers; B for buzz numbers and a dot for the others;
-enjoy;
+[
+    this is almost fizzbuzz; it does not print asciified numbers; because that would take way too much work
+    instead; it just outputs F for fizz numbers; B for buzz numbers and a dot for the others;
+    enjoy;
+
+    thanks to the following resources:
+
+    * http://esolangs.org/wiki/Brainfuck
+    * http://esolangs.org/wiki/Brainfuck_constants
+    * http://esolangs.org/wiki/Brainfuck_algorithms
+]
 
 initialize counter to 100 (it counts down)
 
@@ -131,6 +139,8 @@ or at least pretend to
         <<<
     -]
     <<<<<
+
+unset flag
 
     >>>>>>>[-]<<<<<<<
 
