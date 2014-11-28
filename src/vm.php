@@ -9,7 +9,8 @@ use Psr\Log\NullLogger;
 function execute($code, LoggerInterface $logger = null)
 {
     $vm = new Machine($code, $logger);
-    return $vm->execute();
+    $vm->execute();
+    return $vm;
 }
 
 // in order to allow consuming single chars,
